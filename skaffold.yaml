@@ -18,3 +18,11 @@ build:
             dest: .
           - src: '**/*.tsx'
             dest: .
+    - image: newtodoker/jb-collections
+      context: collections
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.ts'
+            dest: .
