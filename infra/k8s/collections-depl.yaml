@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: collections-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: collections
+  template:
+    metadata:
+      labels:
+        app: collections
+    spec:
+      containers:
+        - name: collections
+          image: newtodoker/jb-collections
+          env:
+            - name: MONGO_URI
+              value: 'mongodb://collections-mongo-srv:27017/collections'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: collections-srv
+spec:
+  selector:
+    app: collections
+  ports:
+    - name: collections
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
