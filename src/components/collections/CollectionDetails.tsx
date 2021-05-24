@@ -9,8 +9,8 @@ import { CollectionsStateResource } from '../../redux/state/collectionsState';
 
 export interface ILink {
   id: string;
-  name: string;
-  link: string;
+  resourceName: string;
+  url: string;
 }
 
 interface Props {
@@ -20,8 +20,8 @@ interface Props {
 
 const resourceState: ILink = {
   id: '',
-  name: '',
-  link: ''
+  resourceName: '',
+  url: ''
 };
 
 const CollectionDetails = (props: Props) => {
@@ -47,7 +47,7 @@ const CollectionDetails = (props: Props) => {
         resource
       };
       console.log('newResource', newResource);
-      createLink(newResource);
+      // createLink(newResource);
     }
   };
 
@@ -135,7 +135,7 @@ const CollectionDetails = (props: Props) => {
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 <ul className="border border-gray-200 rounded-md divide-y divide-gray-200">
                   {collection.links.map(link => (
-                    <Resource key={link.id} {...link} />
+                    <Resource key={link.id} link={link} />
                   ))}
                 </ul>
               </dd>
