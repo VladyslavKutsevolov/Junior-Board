@@ -1,13 +1,14 @@
-import { render, screen } from '../../../test-utils/testing-library';
-import Collections from '../Collections';
 import userEvent from '@testing-library/user-event';
 import { waitFor } from '@testing-library/react';
+import { render, screen } from '../../../test-utils/testing-library';
+import Collections from '../Collections';
 
 beforeEach(() => {
   const observe = jest.fn();
   const unobserve = jest.fn();
   const disconnect = jest.fn();
-  //@ts-ignore
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   window.IntersectionObserver = jest.fn(() => ({
     observe,
     unobserve,
@@ -17,6 +18,7 @@ beforeEach(() => {
 
 describe('Collection Component', () => {
   it('should create new collection', async () => {
+    // eslint-disable-next-line react/react-in-jsx-scope
     render(<Collections />);
 
     const createBtn = screen.getByRole('button', {
