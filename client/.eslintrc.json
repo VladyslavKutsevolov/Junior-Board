@@ -10,7 +10,8 @@
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb",
-    "airbnb/hooks"
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -129,6 +130,7 @@
       "labelAttributes": ["label"],
       "controlComponents": ["CustomInput"],
       "depth": 3
-    }]
+    }],
+    "@typescript-eslint/ban-ts-ignore": "off"
   }
 }

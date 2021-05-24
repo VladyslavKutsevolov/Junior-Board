@@ -22,15 +22,15 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "redux-logger": "^3.0.6",
-    "typescript": "^4.1.2",
+    "typescript": "^4.2.4",
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "start": "./node_modules/.bin/craco start",
+    "build": "./node_modules/.bin/craco build",
+    "test": "./node_modules/.bin/craco test",
+    "eject": "./node_modules/.bin/react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -54,6 +54,8 @@
     "@tailwindcss/postcss7-compat": "^2.1.0",
     "@types/react-router-dom": "^5.1.7",
     "@types/redux-logger": "^3.0.8",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
     "autoprefixer": "^9",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.2.0",

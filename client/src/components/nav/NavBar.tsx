@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const navigation = [
-  'My Collections',
-  'Team',
-  'Projects',
-  'Calendar',
-  'Reports'
+  { name: 'My Collections', href: '/collections' },
+  { name: 'Team', href: '#' },
+  { name: 'Projects', href: '#' }
 ];
 const profile = ['Your Profile', 'Settings', 'Sign out'];
 
@@ -35,22 +34,22 @@ const NavBar = () => {
                     <div className="ml-10 flex items-baseline space-x-4">
                       {navigation.map((item, itemIdx) =>
                         itemIdx === 0 ? (
-                          <Fragment key={item}>
-                            <a
-                              href="#"
+                          <Fragment key={item.name}>
+                            <Link
+                              to={item.href}
                               className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                             >
-                              {item}
-                            </a>
+                              {item.name}
+                            </Link>
                           </Fragment>
                         ) : (
-                          <a
-                            key={item}
-                            href="#"
+                          <Link
+                            key={item.name}
+                            to={item.href}
                             className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                           >
-                            {item}
-                          </a>
+                            {item.name}
+                          </Link>
                         )
                       )}
                     </div>
@@ -134,22 +133,22 @@ const NavBar = () => {
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 {navigation.map((item, itemIdx) =>
                   itemIdx === 0 ? (
-                    <Fragment key={item}>
-                      <a
-                        href="#"
-                        className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                    <Fragment key={item.name}>
+                      <Link
+                        to={item.href}
+                        className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                       >
-                        {item}
-                      </a>
+                        {item.name}
+                      </Link>
                     </Fragment>
                   ) : (
-                    <a
-                      key={item}
-                      href="#"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                     >
-                      {item}
-                    </a>
+                      {item.name}
+                    </Link>
                   )
                 )}
               </div>
