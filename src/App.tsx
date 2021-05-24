@@ -1,15 +1,15 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import './App.css';
-
 import Collections from './components/collections/Collections';
-import { store } from './redux/store';
+import NavBar from './components/nav/NavBar';
 
 function App() {
   return (
-    <Provider store={store}>
-      <Collections />
-    </Provider>
+    <div>
+      <NavBar />
+      <div className="container mx-auto">
+        <Collections />
+      </div>
+    </div>
   );
 }
 
