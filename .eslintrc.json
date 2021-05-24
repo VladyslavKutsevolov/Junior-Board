@@ -10,8 +10,7 @@
     "eslint:recommended",
     "plugin:prettier/recommended",
     "airbnb",
-    "airbnb/hooks",
-    "plugin:@typescript-eslint/recommended"
+    "airbnb/hooks"
   ],
   "globals": {
     "Atomics": "readonly",
