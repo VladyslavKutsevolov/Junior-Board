@@ -10,9 +10,13 @@ spec:
     - host: junior-board.dev
       http:
         paths:
-          - path: /collections/?(.*)
+          - path: /api/collections/?(.*)
             backend:
               serviceName: collections-srv
+              servicePort: 3000
+          - path: /api/users/?(.*)
+            backend:
+              serviceName: auth-srv
               servicePort: 3000
           - path: /?(.*)
             backend:
