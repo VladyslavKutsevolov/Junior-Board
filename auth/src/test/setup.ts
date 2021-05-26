@@ -41,11 +41,11 @@ afterAll(async () => {
 
 global.signin = async () => {
   const email = "test@test.com";
-  const pass = "1234553134";
+  const password = "1234553134";
 
   const res = await request(app)
     .post("/api/users/signup")
-    .send({ email, pass })
+    .send({ email, password })
     .expect(201);
 
   const cookie = res.get("Set-Cookie");
