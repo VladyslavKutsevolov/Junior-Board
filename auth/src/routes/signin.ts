@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import { body } from "express-validator";
 import jwt from "jsonwebtoken";
 import { User } from "../models/user";
-import { BadRequestError } from "@junior-board/common";
+import { BadRequestError, validateRequest } from "@junior-board/common";
 import { Password } from "../services/password";
 
 const router = express.Router();
@@ -13,6 +13,7 @@ router.post(
     body("email").isEmail().withMessage("Email must be valid"),
     body("password").trim().notEmpty().withMessage("you must supply password"),
   ],
+  validateRequest,
   async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
