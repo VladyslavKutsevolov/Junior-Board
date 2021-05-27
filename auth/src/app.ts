@@ -2,7 +2,7 @@ import express from "express";
 import "express-async-errors";
 import cookieSession from "cookie-session";
 
-import { NotFoundError } from "@junior-board/common";
+import { errorHandler, NotFoundError } from "@junior-board/common";
 
 import { currentUserRouter } from "./routes/currentUser";
 import { signInRouter } from "./routes/signin";
@@ -28,5 +28,7 @@ app.use(signOutRouter);
 app.all("*", async () => {
   throw new NotFoundError();
 });
+
+app.use(errorHandler);
 
 export { app };
