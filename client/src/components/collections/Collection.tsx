@@ -4,7 +4,6 @@ import { useLocation, useHistory } from 'react-router-dom';
 const Collection = () => {
   const [, , id] = useLocation().pathname.split('/');
   const history = useHistory();
-  console.log('path', id);
   return (
     <div>
       <button
