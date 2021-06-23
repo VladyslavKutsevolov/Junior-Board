@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Collections from './components/collections/Collections';
 import NavBar from './components/nav/NavBar';
 import Collection from './components/collections/Collection';
+import Signup from './components/auth/Signup';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="container mx-auto">
         <Switch>
           <Route exact path="/collections" component={Collections} />
+          <Route exact path="/signup" component={Signup} />
           <Route exact path="/collection/:id" component={Collection} />
         </Switch>
       </div>
